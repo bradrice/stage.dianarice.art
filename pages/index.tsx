@@ -48,7 +48,7 @@ export default function HomePage({ carouselData }) {
         <div className="row">
         <div className="col-sm-12">
           <div className={styles.homecopy}>
-          <p className={`text-center ${styles.hometext}`}>View more of my <Link href="art"><a className="btn btn-primary">Artwork</a></Link></p>
+          <p className={`text-center ${styles.hometext}`}>View more of my <Link href="/art"><a className="btn btn-primary">Artwork</a></Link></p>
           <p></p>
           </div>
         </div>
