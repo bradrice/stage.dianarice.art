@@ -44,3 +44,14 @@ export const fetchCarouselData = async () => {
     }
     
 }
+
+export const fetchArtworkMediaTypes = async () => {
+    try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_REACT_APP_API_SERVER}/api/artwork/mediatypes`);
+    const data = (await response).json();
+        console.log(data);
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
+}

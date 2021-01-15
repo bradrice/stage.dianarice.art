@@ -4,13 +4,14 @@ import Link from 'next/link';
 // import { ConnectedPager } from '../pager/pager'
 import Layout from '../../components/layout';
 import { getAllArtIds, getArtData } from '../../lib/art';
-import { fetchArtworkData, fetchArtworkPagedData } from '../../lib/api';
+import { fetchArtworkData, fetchArtworkMediaTypes, fetchArtworkPagedData } from '../../lib/api';
 import Card from 'react-bootstrap/Card'
 import CardColumns from 'react-bootstrap/CardColumns';
 import SaleInfo from '../../components/saleinfo/saleinfo';
 import Pager from '../../components/pager/pager';
 import Head from 'next/head'
 import { syncBuiltinESMExports } from 'module';
+import { GetServerSideProps } from 'next'
 
 
 // const setCurrentSlide = (val:number) => store.dispatch({type: 'INCREMENT_SLIDE', payload: val});
@@ -44,12 +45,13 @@ interface IArtworkProps {
 
 
 
-export default function ArtListPage({ artData }) {
+export default function ArtListPage({ artData, menuItems }) {
 
   const pageSize = process.env.NEXT_PUBLIC_PAGESIZE;
   const [artWork, setArt] = useState(artData);
   const [pageNum, setPage] = useState(1);
   const [mediaType, setMedia] = useState('all');
+  const [mediaItems, setMediaItems] = useState(menuItems);
 
   function goToPage(val) {
     setPage(val);
@@ -77,6 +79,11 @@ export default function ArtListPage({ artData }) {
     const response = await fetchArtworkPagedData(url);
     setArt(response);
   }
+
+  const getMenuItems = async () => {
+    const data = await fetchArtworkMediaTypes();
+    setMediaItems(data);
+  }
   
   
   const getArtworkByMedia = async (e) => {
@@ -86,24 +93,25 @@ export default function ArtListPage({ artData }) {
     const response = await fetchArtworkPagedData(url);
     setArt(response);
   }
+  
   let art;
       if(artLoaded) {
         art = (
           <Layout>
             <Head>
-        <title>Brad Rice's art</title>
-        <meta property="og:title" content="Brad Rice's art" key="title" />
+        <title>Diana Rice's art</title>
+        <meta property="og:title" content="Diana Rice's art" key="title" />
       </Head>
           <div className={styles.artHolder}>
             <div className="row">
               <div className="col-sm-12 col-md-4">
                 <div className="form-conntrol filter-control">
                   <label htmlFor="media" className="form-label">Filter by Media</label>
-                  <select className="form-select" id="meida-select" name="media" onChange={getArtworkByMedia}>
+                  <select className="form-select" id="media-select" name="media" onChange={getArtworkByMedia}>
                     <option value="all">All</option>
-                    <option value="W">Watercolor</option>
-                    <option value="A">Acrylic</option>
-                    <option value="MM">Mixed Media</option> 
+                    {mediaItems.map((item, v) => ( 
+                      <option value={item.key}>{item.value}</option>
+                    )) }
                     {/* <option value="O">Oil</option> */}
                   </select>
                 </div>
@@ -125,7 +133,7 @@ export default function ArtListPage({ artData }) {
                         <Link href={`/art/${item.id}`}>Detail</Link>
                       </Card.Body>    
                       </Card>
-                    </div> 
+                    </div>
                   ))}
               </div>
               <div className="col-sm-12">
@@ -147,14 +155,17 @@ export default function ArtListPage({ artData }) {
           )
       }
 
-export async function getServerSideProps({ params }) {
+
+export async function getServerSideProps() {
   const pageSize = process.env.NEXT_PUBLIC_PAGESIZE;
-  console.log("in getStaticProps", pageSize);
-  const artData = await fetchArtworkPagedData(`${process.env.NEXT_PUBLIC_REACT_APP_API_SERVER}/api/artwork/?page=1&page_size=${pageSize}`);
-  // console.log("artwork:", artData);
+  const [artData, menuItems] = await Promise.all([
+    fetchArtworkPagedData(`${process.env.NEXT_PUBLIC_REACT_APP_API_SERVER}/api/artwork/?page=1&page_size=${pageSize}`),
+    fetchArtworkMediaTypes()
+  ]);
   return {
     props: {
-      artData
+      artData,
+      menuItems
     }
   }
 }
