@@ -119,6 +119,20 @@
   justify-content: center;
 }
 
+.HomeImage {
+  max-width: 600px;
+      max-height: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      display: block;
+}
+
+.ContentBody {
+  text-align: center;
+}
+
 .homecopy {
   margin: 1em auto;
   display: flex;

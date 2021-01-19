@@ -31,8 +31,8 @@ const Header = () => {
       
       
     <div className={headerStyles.logo}>
-      <img src="/images/dr-logo.jpeg" alt="Diana Rice" className={headerStyles.logoImg} /> 
-      <div className={headerStyles.logoName}>Diana Rice | Fine Art</div>
+      {/* <img src="/images/dr-logo.jpeg" alt="Diana Rice" className={headerStyles.logoImg} />  */}
+      <div className={headerStyles.logoName}>DIANA RICE</div>
     </div>
     </header>
     

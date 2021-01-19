@@ -17,7 +17,7 @@ export default function ArtDetail({ artData }) {
           <div className="col-sm-12">
             <Card className={styles.cardDetail}>
             {artData.artimage &&
-              <Card.Img src={artData.artimage.gallery_large} alt={artData.title}  />
+              <Card.Img src={artData.artimage.gallery_large} alt={artData.title} className={styles.cardImage} />
             }
               <Card.Body>
                 <h5 className="card-title">{artData.title}</h5>

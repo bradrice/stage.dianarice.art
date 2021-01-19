@@ -1,6 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 @import "variables";
 
+@font-face{
+  font-family:"URW Impact W01 Regular";
+  src:url("/fonts/927919/f8417140-723c-4629-aa7e-4dd1a4f49e27.woff2") format("woff2"),url("/fonts/927919/33f4963d-1cd4-45b6-849d-4066ba75c7ac.woff") format("woff");
+}
+
 html,
 body {
   padding: 0;

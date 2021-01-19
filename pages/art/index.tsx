@@ -93,7 +93,7 @@ export default function ArtListPage({ artData, menuItems }) {
     const response = await fetchArtworkPagedData(url);
     setArt(response);
   }
-  
+
   let art;
       if(artLoaded) {
         art = (
@@ -128,9 +128,9 @@ export default function ArtListPage({ artData, menuItems }) {
                       <Card.Body>
                         <Card.Title>{item.title}</Card.Title>
                         <Card.Text className={styles.cardText}>
+                        {!item.sold && item.forSale ? <div>{item.price_format}</div> : ""}
                         {item.sold ? <span className={styles.sold}>Sold</span> : ""}
                         </Card.Text>
-                        <Link href={`/art/${item.id}`}>Detail</Link>
                       </Card.Body>    
                       </Card>
                     </div>

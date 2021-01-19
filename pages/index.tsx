@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
-import React from 'react';
+import React, { useState } from 'react';
 // import './home.scss';
 import HomeCarousel from '../components/carousel/carousel';
 import Layout from '../components/layout';
@@ -33,14 +33,17 @@ interface IArtworkProps {
 }
 
 
-export default function HomePage({ carouselData }) {
+export default function HomePage({ HomeData }) {
+  const [homeData, setHomeData] = useState(HomeData);
+
     return (
       <Layout>
       <div className="row">
         <div className="col-sm-12">
           <div className={styles.HomePage}>
             <div className="mt-1">
-            <HomeCarousel slides={carouselData}/>
+              <img src={homeData[0].artwork.artimage.gallery_large} alt="home image" className={styles.HomeImage} />
+              <p className={styles.ContentBody}>{homeData[0].bodycontent}</p>
             </div>
           </div>
         </div>
@@ -57,13 +60,13 @@ export default function HomePage({ carouselData }) {
     )
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // const allPostsData = getSortedPostsData()
-  const response = await fetch(`${process.env.NEXT_PUBLIC_REACT_APP_API_SERVER}/api/carousel/1`);
-  const carouselData = await response.json();
+  const response = await fetch(`${process.env.NEXT_PUBLIC_REACT_APP_API_SERVER}/api/homepage/`);
+  const HomeData = await response.json();
   return {
     props: {
-      carouselData
+      HomeData
     }
   }
 }

@@ -55,3 +55,14 @@ export const fetchArtworkMediaTypes = async () => {
         console.log(e);
     }
 }
+
+export const fetchHomeData = async () => {
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_REACT_APP_API_SERVER}/api/homepage`);
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
+}
