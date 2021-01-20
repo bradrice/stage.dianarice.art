@@ -8,15 +8,22 @@ export default function AboutPage({ AboutData }) {
   
     return (
     <Layout>
-    <div className="col-sm-12">
-    <div className={styles.HomePage}>
-      <h2>{aboutData[0].abouttitle}</h2>
-            <div className="mt-1">
+    <div className="row">
+        <div className="col-sm-12">
+          <div className={styles.HomePage}>
+          <div className={`mt-1 ${styles.imageContainer}`}>
               <img src={aboutData[0].artwork.artimage.gallery_large} alt="home image" className={styles.HomeImage} />
-              <p className={styles.AboutContentBody}>{aboutData[0].bodycontent}</p>
+              <h3>{aboutData[0].artwork.title}</h3>
+              <p>{aboutData[0].artwork.media}</p>
+              <p>{aboutData[0].artwork.width} x {aboutData[0].artwork.height}</p>
+             {aboutData[0].bodycontent ? 
+              <p className={styles.ContentBody}>{aboutData[0].bodycontent}</p>
+              : <div></div>
+             }
             </div>
           </div>
-    </div>
+        </div>
+        </div>
   </Layout>
     )
   }

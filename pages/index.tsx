@@ -42,17 +42,24 @@ export default function HomePage({ HomeData }) {
         <div className="row">
         <div className="col-sm-12">
           <div className={styles.HomePage}>
-            <div className="mt-1">
+          <div className={`mt-1 ${styles.imageContainer}`}>
               <img src={homeData[0].artwork.artimage.gallery_large} alt="home image" className={styles.HomeImage} />
+              <h3>{homeData[0].artwork.title}</h3>
+              <p>{homeData[0].artwork.media}</p>
+              <p>{homeData[0].artwork.width} x {homeData[0].artwork.height}</p>
+             {homeData[0].bodycontent ? 
               <p className={styles.ContentBody}>{homeData[0].bodycontent}</p>
+              : <div></div>
+             }
             </div>
           </div>
         </div>
         </div>
         <div className="row">
         <div className="col-sm-12">
+          {}
           <div className={styles.homecopy}>
-          <p className={`text-center ${styles.hometext}`}>View more of my <Link href="/art"><a className="btn btn-light">Artwork</a></Link></p>
+          <p className={`text-center ${styles.hometext}`}>View more of my <Link href="/art"><a className="btn btn-outline-dark">Artwork</a></Link></p>
           <p></p>
           </div>
         </div>
