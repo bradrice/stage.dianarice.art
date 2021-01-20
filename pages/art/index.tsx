@@ -99,9 +99,9 @@ export default function ArtListPage({ artData, menuItems }) {
         art = (
           <Layout>
             <Head>
-        <title>Diana Rice's art</title>
-        <meta property="og:title" content="Diana Rice's art" key="title" />
-      </Head>
+              <title>Diana Rice's art</title>
+              <meta property="og:title" content="Diana Rice's art" key="title" />
+            </Head>
           <div className={styles.artHolder}>
             <div className="row">
               <div className="col-sm-12 col-md-4">

@@ -14,8 +14,8 @@ export default function SaleInfo({ artitem }) {
 }
   
   return(
-    <div className="btn btn-primary" onClick={buttonClicked}>Purchase</div>
-    // <Link href={checkoutpath}><a className="btn btn-primary">Purchase</a></Link>
+    // <div className="btn btn-primary" onClick={buttonClicked}>Purchase</div>
+    <Link href={checkoutpath}><a className="btn btn-light">Purchase</a></Link>
   )
 }
 

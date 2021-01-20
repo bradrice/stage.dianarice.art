@@ -6,21 +6,28 @@
   src:url("/fonts/927919/f8417140-723c-4629-aa7e-4dd1a4f49e27.woff2") format("woff2"),url("/fonts/927919/33f4963d-1cd4-45b6-849d-4066ba75c7ac.woff") format("woff");
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
 a {
   color: $celadon-blue;
   text-decoration: underline;
 }
 
-* {
-  box-sizing: border-box;
+* { 
+  box-sizing: border-box; 
+}
+
+body { 
+  width: inherit; 
+  min-height: inherit; 
+  margin: 0; 
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+} 
+
+@media only screen and (max-width: 576px) {
+  html {
+    width: fit-content
+  }
 }
 
 .top-menu {

@@ -1,13 +1,12 @@
 import Head from 'next/head'
-import styles from './layout.module.css'
+import styles from './layout.module.scss'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import Header from './header/Header'
 
 export default function Layout({ children }) {
     return (
-    <div className="row">
-        <div className="container-fluid">
+        <div className={styles.layout}>
             <Head>
             <link rel="icon" href="/favicon.ico" />
             <meta
@@ -21,7 +20,6 @@ export default function Layout({ children }) {
         <div className="main">{children}</div>
         </div>
         </div>
-    </div>
     )
   }
   

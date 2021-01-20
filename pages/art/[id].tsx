@@ -32,7 +32,7 @@ export default function ArtDetail({ artData }) {
               </Card.Body> 
             </Card>
             <div className={styles.linkback}>
-            <Link href="/art">Return to art</Link>
+            <Link href="/art"> &lt; Return to art</Link>
             </div>
           </div>
         </div>

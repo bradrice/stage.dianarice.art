@@ -9,7 +9,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+<div className={headerStyles.navTop}>
+<div className={headerStyles.logoName}>DIANA RICE</div>      
+   <Navbar collapseOnSelect expand="md">
   <Navbar.Toggle />
   <Navbar.Collapse className="justify-content-start">
   <Nav activeKey="/" onSelect={(selectedKey) => console.log(`selected ${selectedKey}`)}>
@@ -25,17 +27,11 @@ const Header = () => {
   <Nav.Item className={headerStyles.navItem}>
     <Nav.Link href="/contact" eventKey="link-3">Contact</Nav.Link>
   </Nav.Item>
-</Nav>
-  </Navbar.Collapse>
-</Navbar>
-      
-      
-    <div className={headerStyles.logo}>
-      {/* <img src="/images/dr-logo.jpeg" alt="Diana Rice" className={headerStyles.logoImg} />  */}
-      <div className={headerStyles.logoName}>DIANA RICE</div>
+    </Nav>
+    </Navbar.Collapse>
+    </Navbar>
     </div>
     </header>
-    
   )
 }
 
