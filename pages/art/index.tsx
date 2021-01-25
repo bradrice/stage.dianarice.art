@@ -137,7 +137,7 @@ export default function ArtListPage({ artData, menuItems }) {
                   ))}
               </div>
               <div className="col-sm-12">
-              <Pager artData={artWork} pageTo={goToPage} goNext={nextPage} goPrev={prevPage} pageNum={pageNum} pageCount={artWork.count} variant="dark"></Pager>
+              <Pager artData={artWork} pageTo={goToPage} goNext={nextPage} goPrev={prevPage} pageNum={pageNum} pageCount={artWork.count}></Pager>
               </div>
               </div>
 
