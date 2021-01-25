@@ -18,9 +18,9 @@ const Header = () => {
   <Nav.Item className={headerStyles.navItem}>
     <Nav.Link href="/">Home</Nav.Link>
   </Nav.Item>
-  <Nav.Item className={headerStyles.navItem}>
+  {/* <Nav.Item className={headerStyles.navItem}>
     <Nav.Link href="/about" eventKey="link-1">About</Nav.Link>
-  </Nav.Item>
+  </Nav.Item> */}
   <Nav.Item className={headerStyles.navItem}>
     <Nav.Link href="/art" eventKey="link-2">Art</Nav.Link>
   </Nav.Item>
