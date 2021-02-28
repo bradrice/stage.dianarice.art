@@ -120,8 +120,10 @@
 }
 
 .HomeImage {
-  max-width: 600px;
+  @media (min-width: 576px)  {
+    max-width: 600px;
       max-height: 800px;
+  }
       margin-left: auto;
       margin-right: auto;
       margin-top: 1em;
@@ -134,9 +136,21 @@
 }
 
 .imageContainer {
-  display: block;
   width: auto;
   margin: auto;
+  display: block;
+  @media (min-width: 576px) {
+      display: flex;
+    }
+}
+
+.homeText {
+  margin-left: 1em;
+  margin-top: 1em;
+  h3 {
+    font-weight: 20px;
+    font-weight: bold;
+  }
 }
 
 .homecopy {

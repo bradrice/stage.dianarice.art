@@ -40,10 +40,11 @@ export default function HomePage({ HomeData }) {
       <div>
       <Layout>
         <div className="row">
-        <div className="col-sm-12">
+        <div className="col-md-12">
           <div className={styles.HomePage}>
           <div className={`mt-1 ${styles.imageContainer}`}>
-              <img src={homeData[0].artwork.artimage.gallery_large} alt="home image" className={styles.HomeImage} />
+              <img src={homeData[0].artwork.artimage.gallery_large} alt="home image" className={`img-fluid ${styles.HomeImage}`} />
+              <div className={`d-sm-none d-md-block ${styles.homeText}`}>
               <h3>{homeData[0].artwork.title}</h3>
               <p>{homeData[0].artwork.media}</p>
               <p>{homeData[0].artwork.width} x {homeData[0].artwork.height}</p>
@@ -51,6 +52,7 @@ export default function HomePage({ HomeData }) {
               <p className={styles.ContentBody}>{homeData[0].bodycontent}</p>
               : <div></div>
              }
+              </div>
             </div>
           </div>
         </div>
