@@ -25,6 +25,9 @@ const Header = () => {
     <Nav.Link href="/art" eventKey="link-2">Art</Nav.Link>
   </Nav.Item>
   <Nav.Item className={headerStyles.navItem}>
+    <Nav.Link href="/sketchbook" eventKey="link-2">Sketchbooks</Nav.Link>
+  </Nav.Item>
+  <Nav.Item className={headerStyles.navItem}>
     <Nav.Link href="/contact" eventKey="link-3">Contact</Nav.Link>
   </Nav.Item>
     </Nav>

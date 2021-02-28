@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+
+.filter-control {
+    margin-bottom: .5em;
+}
+
+.sold {
+    color: $imperial-red;
+    font-weight: bold;
+    margin: auto;
+}
+
+.artHolder {
+    padding: 1em;
+}
+
+.cardColumns {
+    column-count: 3;
+}
+
+.cardItem {
+    display: inline-block;
+    border: none;
+    margin: 0 auto 2rem auto;
+    text-align: left;
+}
+
+
+.cardDetail {
+    width: 80%; 
+    margin: 1em auto;   
+}
+
+@media (max-width: 600px) {
+    .cardDetail {
+    width: 95%; 
+    margin: 1em auto;  
+  }
+}
+
+  .cardText {
+      margin-bottom: .5em;
+  }
+
+  .cardCol {
+      text-align: center;
+  }
+
+  .cardImage {
+      max-width: 600px;
+      max-height: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1em;
+      cursor: pointer;
+  }
+
+  .linkback {
+      margin: 1em .5em;
+  }

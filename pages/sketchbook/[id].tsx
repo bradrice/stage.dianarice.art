@@ -1,16 +1,16 @@
 import Layout from '../../components/layout';
-import { getAllArtIds, getArtData } from '../../lib/art';
+import { getAllSketchbookIds, getSketchbookData } from '../../lib/sketchbook';
 // import { loadStripe } from '@stripe/stripe-js';
 // import {Elements} from '@stripe/react-stripe-js';
 import SaleInfo from '../../components/saleinfo/saleinfo';
 import Card from 'react-bootstrap/Card';
-import styles from './art.module.scss';
+import styles from './sketchbook.module.scss';
 import Head from 'next/head';
 import Link from 'next/link';
 
 // const stripePromise = loadStripe('pk_test_AuwxcUOjPDUHbXyODkwDQ74r');
 
-export default function ArtDetail({ artData }) {
+export default function SketchbookDetail({ artData }) {
 
     let artwork = (
         <div className="row">
@@ -23,16 +23,12 @@ export default function ArtDetail({ artData }) {
                 <h5 className="card-title">{artData.title}</h5>
                 <div className="details">
                   <p>{artData.description}</p>
-                  <p>Size: {artData.width} x {artData.height}<br />
-                  {artData.media}</p>
-                        {artData.sold ? <p className={styles.sold}>Sold</p> : ""}
-                        {!artData.sold && artData.forSale ? <div>{artData.price_format}</div> : ""}
-                        {artData.forSale ? <SaleInfo artitem={artData}/> : <div>Not for sale</div>}
+                  <p>{artData.media}</p>
                 </div> 
               </Card.Body> 
             </Card>
             <div className={styles.linkback}>
-            <Link href="/art"> &lt; Return to art</Link>
+            <Link href="/sketchbook"> &lt; Return to sketchbook</Link>
             </div>
           </div>
         </div>
@@ -61,7 +57,7 @@ export default function ArtDetail({ artData }) {
 //   }
   
   export async function getServerSideProps({ params }) {
-    const artData = await getArtData(params.id);
+    const artData = await getSketchbookData(params.id);
     // console.log("artwork:", artData);
     return {
       props: {
