@@ -1,11 +1,11 @@
 {
-  "name": "stage.dianarice.art",
-  "version": "0.1.0",
+  "name": "dianarice.art",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 8081"
+    "start": "next start -p 9092"
   },
   "dependencies": {
     "@popperjs/core": "^2.5.4",
