@@ -17,8 +17,6 @@ export default function ResumePage({ AboutData }) {
 <p>b. 2000</p>
 
 <p>Visual Artist and Student, Myers School of Art, University of Akron
-<br/>455 Grant Street, Akron, OH 44311	330-410-5988
-<br />dcr60@uakron.edu	dianarice.art
 </p>
 
 
