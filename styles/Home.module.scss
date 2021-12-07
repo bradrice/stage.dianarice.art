@@ -119,6 +119,25 @@
   justify-content: center;
 }
 
+.BioPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .content {
+    max-width: 900px;
+  }
+}
+
+.ResumePage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .content {
+    max-width: 900px;
+  }
+}
+
+
 .HomeImage {
   @media (min-width: 576px)  {
     max-width: 600px;
